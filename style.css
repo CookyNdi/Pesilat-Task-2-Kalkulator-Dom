@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #23242a;
+}
+
+.calcContainer {
+  position: relative;
+  width: 380px;
+  height: 496px;
+  background: #1c1c1c;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+
+.calcContainer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 490px;
+  background: #45f3ff;
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+
+.calcContainer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 490px;
+  background: #45f3ff;
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.wrapperCalc {
+  position: absolute;
+  inset: 4px;
+  border-radius: 8px;
+  background: #28292d;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.inputWrapper {
+  display: flex;
+  gap: 4px;
+}
+
+.inputBox {
+  width: 50%;
+  padding: 12px;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.inputBox:first-child {
+  border-radius: 8px 0 0 0;
+}
+
+.inputBox:last-child {
+  border-radius: 0 8px 0 0;
+}
+
+.previewOperator {
+  min-width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  margin-bottom: 4px;
+  font-size: 20px;
+}
+
+.resultBox {
+  width: 100%;
+  height: 46px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 8px 8px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+
+
+.buttonWrapper {
+  display: grid;
+  grid-template-columns: 24% 24% 24% 24%;
+  grid-template-rows: 70px 70px 70px 70px 70px;
+  gap: 4px;
+}
+
+.buttonWrapper .btn {
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.buttonWrapper .btn:active {
+  background: #ffffffcc;
+}
+
+.buttonWrapper .backSpace {
+  grid-area: 1 / 3 / 2 / 5;
+}
